@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rólam</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+
+        }
+        body {
+            background: rgb(236, 230, 175);
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #fff;   
+            position: fixed;
+            width: 100vw;
+            max-width: 100vw;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (max-width: 426px) {
+            .span{
+                content-visibility: hidden;
+                color: white;    
+            }
+        }
+
+        @media screen and (max-width: 360px) {
+            nav {
+                font-size: small;
+            }
+            
+        }
+        
+     
+        ul {
+            display: flex;
+            list-style: none;
+            align-items: start;
+        }
+        ul li {
+            margin: 0 15px;
+        }
+        ul li a {
+            text-decoration: none;
+            color: black;
+        }
+        .content {
+            margin-top: 80px;
+            padding: 20px;
+            background: rgb(242, 242, 242);
+            max-width: 800px;
+            height: 90%;
+        }
+        h1{
+            font-style: italic;
+            font-weight: bolder;
+        }
+
+        #portfolio{
+            font-weight: lighter    ;
+        }
+
+        #munka{
+            border-spacing: 10px;
+            border-left: 3px solid #e6cea0;
+            border-right: 3px solid #e6cea0;
+            border-radius: 2px;
+            padding: 10px;
+            margin: -20px;
+        }
+
+        strong{
+            margin-right: 4px;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div id="portfolio"><strong>FT</strong><span class="span">Portfólió</span> </div>
+        <ul>
+            <li><a href="index.html">Főoldal</a></li>
+            <li><a id="munka" href="work.html">Munkáim</a></li>
+            <li><a href="contact.html">Kapcsolat</a></li>
+        </ul>
+    </nav>
+    
+    <section class="content">  
+        <h1><strong>‎ ‎ Rólam</strong></h1>
+        <p>‎ ‎ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus arcu nec urna venenatis, sit amet tincidunt eros posuere. Fusce vitae diam vitae ligula sagittis ultrices et ut quam. Sed molestie condimentum turpis at rutrum. Vestibulum ac molestie turpis. Fusce hendrerit euismod urna sed scelerisque. Etiam nisi purus, pharetra eget ex id, rutrum porta ligula. Praesent vulputate ante id ante condimentum mollis. Sed id varius leo, vitae luctus dui. Ut in tristique dolor, vehicula tristique nunc. Fusce magna ligula, imperdiet vitae finibus sit amet, aliquet eget urna. Donec interdum pretium porta. Nunc nisl orci, malesuada a nibh id, dapibus posuere justo.
+
+            Aenean ut eros felis. Fusce posuere elit in nibh tempus lobortis. Integer eu augue porta ante congue fringilla. Aenean non sodales tortor, et pellentesque urna. Sed egestas placerat massa. Duis placerat ullamcorper hendrerit. Etiam ullamcorper gravida blandit. Aliquam ante enim, tincidunt vitae interdum nec, efficitur a quam. Cras facilisis ex faucibus neque sagittis, a sollicitudin enim venenatis. Nunc velit metus, dapibus vel turpis id, maximus sodales metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            
+            Praesent congue odio id risus cursus volutpat. Aliquam ut efficitur neque. Ut eros neque, tempus ornare varius eu, blandit eu est. Nulla facilisi. Praesent in mauris ut arcu auctor tincidunt. Pellentesque vehicula pretium est, vel blandit tortor sollicitudin a. Nullam non justo quam.
+            
+            Suspendisse congue nulla in tellus luctus, sit amet posuere sem aliquet. Cras eu nulla ligula. Curabitur sodales euismod elit, in egestas magna efficitur in. Ut tristique dolor eu ligula tristique, non venenatis risus efficitur. Maecenas suscipit justo sit amet efficitur viverra. Maecenas vel justo ipsum. Aenean fermentum dolor id interdum suscipit. Mauris mollis lorem nisl, sed ornare tellus volutpat nec. Nullam suscipit ut libero eu scelerisque. Praesent eu est iaculis, condimentum dolor feugiat, bibendum nisl. Aliquam erat volutpat.</p>
+    </section>
+</body>
+</html>

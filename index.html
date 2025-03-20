@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólió</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+         
+        }
+        body {
+            background: linear-gradient(to right, 	#e6cea0, #dfc38e);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #fff;   
+            position: fixed;
+            width: 100vw;
+            max-width: 100vw;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            display: flex;
+            list-style: none;
+        }
+        ul li {
+            margin: 0 15px;
+        }
+        ul li a {
+            text-decoration: none;
+            color: black;
+        
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        #foto {
+            display: flex;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            border: 3px solid;
+        }
+        h1 {
+            font-size: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            width: fit-content;
+            margin-top: -10px;
+            margin-bottom: 20px;
+          
+            
+
+            
+        }
+        blockquote {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            border-left: 3px solid black;
+            border-radius: 1px;
+            margin-top: 10px;
+            padding-left: 15px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            height: 70px;
+            align-items: center;
+
+        }
+        .buttons{
+            max-width: 400px;
+            height: 100px;
+            margin-top: 50px;
+            padding: 10px;
+        }
+        .buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background: 	#0090ab;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .section {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .button:hover {
+            color: #494949 !important;
+            border-radius: 50px;
+            border-color: #494949 !important;
+            transition: all 0.3s ease 0s;
+        }
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items:center;
+            text-align: center ;
+            border: 1px solid black;
+            padding: 10px;
+            
+        }
+
+        #munka{
+            border-spacing: 10px;
+            border-left: 3px solid #e6cea0;
+            border-right: 3px solid #e6cea0;
+            border-radius: 2px;
+            padding: 10px;
+            margin: -20px;
+        }
+        strong{
+            margin-right: 4px;
+            font-size: large;
+        }
+        #portfolio{
+            font-weight: lighter    ;
+        }
+
+        .content {
+            padding: 20px;
+            background: rgb(242, 242, 242);
+            max-width: 800px;
+            height: 90%;
+            align-self: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media screen and (max-width:520px) {
+            .motto{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        }
+        @media screen and (max-width: 426px) {
+            .span{
+                content-visibility: hidden;
+                color: white;    
+            }
+        }
+
+        @media screen and (max-width: 360px) {
+            nav {
+                font-size: small;
+            }
+            
+        }
+
+        .container2 {
+            border: 2px solid orange;
+            margin-top: 80px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .card h3 {
+            margin: 10px 0;
+        }
+        .topics {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .links a {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 8px 12px;
+            background: #ff7f50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        #kapcsolat{
+            background-color: #494949;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        }
+
+        #h1bruh{
+            color: black;
+            margin-left: 7px;
+        }
+
+        .container3{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items:center;
+            text-align: center ;
+            border: 1px solid black;
+            padding: 10px;
+            background-color: #e6cea0;
+            height: 600px;
+        }
+
+        #nether{
+            max-width: 2000px;
+            max-height: 400px;
+            margin: 20px;
+        }
+
+        .inputszoveg {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #e6cea0;
+            width: 240px;
+            height: 40px;
+            max-width: 300px;
+            max-height: 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.09);
+        }
+
+        #message{
+            margin: 3px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #e6cea0;
+            width: 240px;
+            height: 110px;
+            max-width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.09);
+        }
+
+        .container4{
+            align-content: start;
+            align-items: start;
+        }
+
+        #submit{
+            margin: 3px;
+            margin-top: 30px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #e6cea0;
+            width: 200px;
+            height: 40px;
+            max-width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.09);
+            background-color: #0090ab;
+            color: white;
+            margin-left: -30px;
+            }
+        
+    </style>
+
+  
+
+
+    
+</head>
+<body>
+    
+    <nav>
+        <div id="portfolio"><strong>FT</strong><span class="span">Portfólió</span> </div>
+        <ul>
+            <li><a href="rolam.html">Rólam</a></li>
+            <li><a id="munka" href="munkaim.html">Munkáim</a></li>
+            <li><a href="kapcsolat.html">Kapcsolat</a></li>
+        </ul>
+    </nav>
+
+    
+    <section class="hero">  
+    
+    <div class="container" "center;">
+        <img id="foto" src="AllVideo_51741240762647.png" alt="saját fotó">
+        <div class="motto" style="flex: 1;">
+            <h1 >Farkas Tamás</h1>
+            <blockquote><strong> <i>Don't finger the hand that bites you <br> or however the saying goes</i>
+
+            </strong></blockquote>
+        </div>
+    </div>
+            
+        
+    
+    <div class="buttons">
+            <a class="button" href="rolam.html">Rólam</a>
+            <a class="button" href="munkaim.html">Munkáim</a>
+            <a class="button" href="kapcsolat.html">Kapcsolat</a>
+        </div>
+    </section>
+</nav>
+    
+<section class="content">  
+    <h1><strong>‎ ‎ Rólam</strong></h1>
+    <p>‎ ‎ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus arcu nec urna venenatis, sit amet tincidunt eros posuere. Fusce vitae diam vitae ligula sagittis ultrices et ut quam. Sed molestie condimentum turpis at rutrum. Vestibulum ac molestie turpis. Fusce hendrerit euismod urna sed scelerisque. Etiam nisi purus, pharetra eget ex id, rutrum porta ligula. Praesent vulputate ante id ante condimentum mollis. Sed id varius leo, vitae luctus dui. Ut in tristique dolor, vehicula tristique nunc. Fusce magna ligula, imperdiet vitae finibus sit amet, aliquet eget urna. Donec interdum pretium porta. Nunc nisl orci, malesuada a nibh id, dapibus posuere justo.
+
+        Aenean ut eros felis. Fusce posuere elit in nibh tempus lobortis. Integer eu augue porta ante congue fringilla. Aenean non sodales tortor, et pellentesque urna. Sed egestas placerat massa. Duis placerat ullamcorper hendrerit. Etiam ullamcorper gravida blandit. Aliquam ante enim, tincidunt vitae interdum nec, efficitur a quam. Cras facilisis ex faucibus neque sagittis, a sollicitudin enim venenatis. Nunc velit metus, dapibus vel turpis id, maximus sodales metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        
+        Praesent congue odio id risus cursus volutpat. Aliquam ut efficitur neque. Ut eros neque, tempus ornare varius eu, blandit eu est. Nulla facilisi. Praesent in mauris ut arcu auctor tincidunt. Pellentesque vehicula pretium est, vel blandit tortor sollicitudin a. Nullam non justo quam.
+        
+        Suspendisse congue nulla in tellus luctus, sit amet posuere sem aliquet. Cras eu nulla ligula. Curabitur sodales euismod elit, in egestas magna efficitur in. Ut tristique dolor eu ligula tristique, non venenatis risus efficitur. Maecenas suscipit justo sit amet efficitur viverra. Maecenas vel justo ipsum. Aenean fermentum dolor id interdum suscipit. Mauris mollis lorem nisl, sed ornare tellus volutpat nec. Nullam suscipit ut libero eu scelerisque. Praesent eu est iaculis, condimentum dolor feugiat, bibendum nisl. Aliquam erat volutpat.</p>
+</section>
+
+            <section id="munkaim"> 
+                <div class="container2" id="munkacontainer">
+                </div>
+            </section>
+
+            <section id="kapcsolat"> 
+                <div class="container3">
+                    <div class="container4">
+                        
+                        <h1 id="h1bruh">Contact form</h1>
+                        <div>
+                            <input class="inputszoveg" type="text" placeholder="First name">
+                        </div>
+                        <div>
+                            <input class="inputszoveg" type="text" placeholder="Last name">
+                        </div>
+                        <div>
+                            <input class="inputszoveg" type="text" placeholder="Email">
+                        </div>
+                        <div>
+                            <input class="inputszoveg" type="text" placeholder="Phone number">
+                        </div>
+                        <div>
+                            <input id="message" type="text" placeholder="Message">
+                        </div>
+                        <button id="submit" type="button" onclick="submit()">Submit</button>
+                    </div>
+                    <img id="nether"  src="netherportal.png" alt="">
+                </div>
+            </section>
+           
+            <script>
+                munka = String()
+                document.addEventListener("DOMContentLoaded", async () => {
+                    const response = await fetch("portfolio.json");
+                    const portfolio = await response.json();
+                    const container = document.getElementById("munkacontainer");
+        
+                    portfolio.forEach(portfolio => {
+                        const card = document.createElement("div");
+                        card.classList.add("card");
+                        
+                        card.innerHTML = `
+                            <img src="${portfolio.photo_url}" alt="${portfolio.title}">
+                            <h3>${portfolio.title}</h3>
+                            <p class="topics">${portfolio.topics.join(", ")}</p>
+                            <div class="links">
+                                <a href="${portfolio["repo-link"]}" target="_blank">GitHub</a>
+                                <a href="${portfolio["site-link"]}" target="_blank">Weboldal</a>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    });
+                });
+            </script>
+</body>
+</html>

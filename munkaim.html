@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munkáim</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: white;
+            padding: 20px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #fff;
+            position: fixed;
+            width: 100vw;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        ul {
+            display: flex;
+            list-style: none;
+        }
+        ul li {
+            margin: 0 15px;
+        }
+        ul li a {
+            text-decoration: none;
+            color: black;
+        }
+        .container {
+            border: 2px solid orange;
+            margin-top: 80px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .card h3 {
+            margin: 10px 0;
+        }
+        .topics {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .links a {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 8px 12px;
+            background: #ff7f50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        #portfolio{
+            font-weight: lighter    ;
+        }
+
+        #munka{
+            border-spacing: 10px;
+            border-left: 3px solid #e6cea0;
+            border-right: 3px solid #e6cea0;
+            border-radius: 2px;
+            padding: 10px;
+            margin: -20px;
+        }
+
+        strong{
+            margin-right: 4px;
+            font-size: large;
+        }
+        @media screen and (max-width: 426px) {
+            .span{
+                content-visibility: hidden;
+                color: white;    
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div id="portfolio"><strong>FT</strong><span class="span">Portfólió</span> </div>
+        <ul>
+            <li><a href="index.html">Főoldal</a></li>
+            <li><a id="munka" href="about.html">Rólam</a></li>
+            <li><a href="contact.html">Kapcsolat</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container" id="work-container">
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const response = await fetch("portfolio.json");
+            const portfolio = await response.json();
+            const container = document.getElementById("work-container");
+
+            portfolio.forEach(portfolio => {
+                const card = document.createElement("div");
+                card.classList.add("card");
+                
+                card.innerHTML = `
+                    <img src="${portfolio.photo_url}" alt="${portfolio.title}">
+                    <h3>${portfolio.title}</h3>
+                    <p class="topics">${portfolio.topics.join(", ")}</p>
+                    <div class="links">
+                        <a href="${portfolio["repo-link"]}" target="_blank">GitHub</a>
+                        <a href="${portfolio["site-link"]}" target="_blank">Weboldal</a>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        });
+    </script>
+</body>
+</html>
