@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólió</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+         
+        }
+        body {
+            background: linear-gradient(to right, 	#e6cea0, #dfc38e);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #fff;   
+            position: fixed;
+            width: 100vw;
+            max-width: 100vw;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow-x: hidden;
+        }
+        ul {
+            display: flex;
+            list-style: none;
+            
+        }
+        ul li {
+            margin: 0 15px;
+        }
+        ul li a {
+            text-decoration: none;
+            color: black;
+        
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow-x: hidden;
+
+        }
+        #foto {
+            display: flex;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            border: 3px solid;
+        }
+        h1 {
+            font-size: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            width: fit-content;
+            margin-top: -10px;
+            margin-bottom: 20px;
+          
+            
+
+            
+        }
+        blockquote {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            border-left: 3px solid black;
+            border-radius: 1px;
+            margin-top: 10px;
+            padding-left: 15px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            height: 70px;
+            align-items: center;
+
+        }
+        .buttons{
+            max-width: 400px;
+            height: 100px;
+            margin-top: 50px;
+            padding: 10px;
+        }
+        .buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background: 	#0090ab;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            color: #494949 !important;
+            border-radius: 50px;
+            border-color: #494949 !important;
+            transition: all 0.3s ease 0s;
+        }
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items:center;
+            text-align: center ;
+            padding: 10px;
+            max-width: 100%;
+            overflow-x: hidden;
+            
+        }
+
+        #munka2{
+            border-spacing: 10px;
+            border-left: 3px solid #e6cea0;
+            border-right: 3px solid #e6cea0;
+            border-radius: 2px;
+            padding: 10px;
+            margin: -20px;
+            
+        }
+        strong{
+            margin-right: 4px;
+            font-size: large;
+        }
+        #portfolio{
+            font-weight: lighter    ;
+        }
+
+        .content {
+            padding: 20px;
+            background: rgb(242, 242, 242);
+            width: 100vw;
+            height: 90%;
+            align-self: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            overflow-x: hidden;
+
+        }
+
+        .content p{
+            font-size: 1.0rem;
+            max-width: 800px;
+            align-self: center;
+            text-align: justify;
+            margin: 0 auto;
+        }
+
+        
+        #munkaim{
+            background-color: white;
+            
+
+        }
+        .container2 {
+            width: 100%;
+            margin-top: 80px;
+            gap: 20px;
+            background-color: white;
+            margin-left:-5px;
+        }
+        .card {
+            background: white;
+            width: 99%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 3px solid orange;
+            margin: 10px 10px;
+           
+        }
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .card h3 {
+            margin: 10px 0;
+        }
+        .topics {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .links {
+            align-self: center;
+            text-align: left;
+            width: 50%;
+            margin: 0;
+            margin-left: 20px;
+            color: rgb(255, 77, 0);
+
+        }
+        .links a {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 8px 12px;
+            color: orange;
+            text-decoration: none;
+            border-radius: 5px;
+            text-decoration: underline;
+            align-self: flex-end;
+        }
+
+        #kapcsolat{
+            background-color: #333;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-x: hidden;
+
+
+        }
+
+        #h1bruh{
+            color: rgb(0, 30, 149);
+            margin: 0 auto;
+            font-size: 2rem;
+            margin-left: 10px;
+        }
+
+        .container3{
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            text-align: center ;
+            ;
+            padding: 10px;
+            background-color: #333;
+        }
+
+
+
+        
+
+        .inputszoveg {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid white;
+            width: 240px;
+            height: 40px;
+            max-width: 300px;
+            max-height: 50px;
+            box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.2), 4px 6px 8px rgba(0, 0, 0, 0.09);
+        }
+
+        #message{
+            margin: 3px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid white;
+            width: 240px;
+            height: 110px;
+            max-width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.09);
+        }
+
+        .container4{
+            
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        #submit {
+            margin: 0 auto;
+            margin-top: 10px;
+            margin-left: -30px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #e6cea0;
+            width: 200px;
+            height: 40px;
+            max-width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.09);
+            background-color: rgb(0, 30, 149);
+            color: white;
+            margin-bottom: 10px;
+            border-radius: 50px;
+
+            
+        }
+
+        .pxd {
+            font-size: 2rem;
+            margin: 0 auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            
+        }
+
+        .contact-info {
+            text-align: left;        
+            margin-right: 20px;
+            }
+        
+            .kapcsol{
+                text-align: left;
+                font-size: larger;
+            }
+        
+        .stronger{
+            font-size: 2rem;
+        }
+        .ul{
+            font-size: 2rem;
+        }
+
+        li{
+            list-style: none;
+            margin-left: 40px;
+        }
+
+        iframe{
+            width: 350px;
+            height: 500px;
+            margin-left: 10px;
+            padding-top: 10px;
+        }
+
+
+        #munkaim{
+            padding: 5px;
+            
+        }
+
+        
+        .munkaim{
+            margin-bottom: -70px;
+            font-size: 2rem;
+            font-weight: bold;
+            text-indent: 10px;
+        }
+
+        .topicsli {
+            list-style-type: disc;
+        }
+        .topics{
+            text-align: left;
+            font-size: 1.5rem;
+
+        }
+
+        .container7{
+            display: flex;
+
+
+        }
+
+        .portfolio_image{
+            width: 50%;
+            margin: 10px;
+        }
+
+        hr{
+            margin-top: -20px;
+            max-width: 100%;
+            margin-right: 20px;
+            border: 1px solid orange;
+            margin-bottom: 20px;
+        }
+
+        .container7 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .oldallink {
+            margin-left: auto;
+            display: flex;
+            justify-content: flex-end;
+            right: 0;
+        }
+
+        .portfolio_image{
+            padding: 5px;
+        }
+
+        .egyikh1{
+            text-indent: 15px;
+            margin:0 ;
+            align-items: start;
+        }
+
+        .szoveg {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .body{
+            overflow-y: hidden;
+            overflow-x: hidden;
+
+        }
+
+        p{
+         text-indent: 15px;
+        }
+
+        @media (max-width: 768px) {
+        .container7 {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 400px;
+
+        }
+
+        .h1title{
+            font-size: 1.5rem;
+        }
+
+        .topics{
+            font-size: 1rem;
+        }
+        .links{
+            width: 100%;
+            margin: 0;
+            margin-left: 0;
+            padding-right: 15px;
+            padding-left: 15px;
+
+        }
+
+        .portfolio_image{
+            width: 100%;
+            margin: 0;
+        }
+
+        iframe{
+            width: 260px;
+        }
+        .container3{
+            flex-wrap: wrap;
+            
+        }
+
+        .contact-info{
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+
+        iframe{
+            margin-top: 15px;
+            margin-left: -0.99px;
+        }
+
+    }
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+        @media (min-width: 1024px) {
+            .container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media screen and (max-width:520px) {
+            .motto{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        }
+        @media screen and (max-width: 426px) {
+            .span{
+                content-visibility: hidden;
+                color: white;    
+            }
+        }
+
+        @media screen and (max-width: 360px) {
+            nav {
+                font-size: small;
+            }
+            
+        }
+
+
+        
+    </style>
+
+  
+
+
+    
+</head>
+<body>
+    <div class="body">
+    
+    <nav>
+        <div id="portfolio"><strong>FT</strong><span class="span">Portfólió</span> </div>
+        <ul>
+            <li><a href="#rolam">Rólam</a></li>
+            <li><a id="munka2" href="#munkaim">Munkáim</a></li>
+            <li><a href="#kapcsolat">Kapcsolat</a></li>
+        </ul>
+    </nav>
+
+    
+    <section class="hero">  
+    
+    <div class="container">
+        <img id="foto" src="asdasdasdasdads.png" alt="saját fotó">
+        <div class="motto" style="flex: 1;">
+            <h1>Farkas Tamás</h1>
+            <blockquote><strong> <i>Coding like poetry  <br>should be short and concise</i>
+
+            </strong></blockquote>
+        </div>
+    </div>
+            
+        
+    
+    <div class="buttons">
+            <a class="button" href="#rolam">Rólam</a>
+            <a class="button" href="#munkaim">Munkáim</a>
+            <a class="button" href="#kapcsolat">Kapcsolat</a>
+        </div>
+    </section>
+</nav>
+    
+<section class="content" id="rolam">
+    <div class="szoveg">  
+    <h1 class="egyikh1"><strong>Rólam</strong></h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus arcu nec urna venenatis, sit amet tincidunt eros posuere. Fusce vitae diam vitae ligula sagittis ultrices et ut quam. Sed molestie condimentum turpis at rutrum. Vestibulum ac molestie turpis. Fusce hendrerit euismod urna sed scelerisque. Etiam nisi purus, pharetra eget ex id, rutrum porta ligula. Praesent vulputate ante id ante condimentum mollis. Sed id varius leo, vitae luctus dui. Ut in tristique dolor, vehicula tristique nunc. Fusce magna ligula, imperdiet vitae finibus sit amet, aliquet eget urna. Donec interdum pretium porta. Nunc nisl orci, malesuada a nibh id, dapibus posuere justo.
+
+        Aenean ut eros felis. Fusce posuere elit in nibh tempus lobortis. Integer eu augue porta ante congue fringilla. Aenean non sodales tortor, et pellentesque urna. Sed egestas placerat massa. Duis placerat ullamcorper hendrerit. Etiam ullamcorper gravida blandit. Aliquam ante enim, tincidunt vitae interdum nec, efficitur a quam. Cras facilisis ex faucibus neque sagittis, a sollicitudin enim venenatis. Nunc velit metus, dapibus vel turpis id, maximus sodales metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        
+        Praesent congue odio id risus cursus volutpat. Aliquam ut efficitur neque. Ut eros neque, tempus ornare varius eu, blandit eu est. Nulla facilisi. Praesent in mauris ut arcu auctor tincidunt. Pellentesque vehicula pretium est, vel blandit tortor sollicitudin a. Nullam non justo quam.
+        
+        Suspendisse congue nulla in tellus luctus, sit amet posuere sem aliquet. Cras eu nulla ligula. Curabitur sodales euismod elit, in egestas magna efficitur in. Ut tristique dolor eu ligula tristique, non venenatis risus efficitur. Maecenas suscipit justo sit amet efficitur viverra. Maecenas vel justo ipsum. Aenean fermentum dolor id interdum suscipit. Mauris mollis lorem nisl, sed ornare tellus volutpat nec. Nullam suscipit ut libero eu scelerisque. Praesent eu est iaculis, condimentum dolor feugiat, bibendum nisl. Aliquam erat volutpat.</p>
+
+    
+</section>
+
+            <section id="munkaim"><div class="munkaim">Munkáim</div>
+                <div class="container2" id="munkacontainer">
+                </div>
+            </section>
+
+            <section id="kapcsolat"> <div class="kapcsol"> <strong class="stronger">Kapcsolat</strong></div>  
+                <div class="container3">
+                    <div class="contact-info">
+                        <ul class="ul">Elérhetőségeink</ul>
+                            <li>📧 info@company.com</li>
+                            <li>📞 +36 1 234 5678</li>
+                            <li>📍 1234 Budapest, Fő utca 1.</li>
+                    </div>
+                    <div class="container4">
+                        
+                        
+                        <h1 id="h1bruh">Contact form</h1>
+                        <div>
+                            <input class="inputszoveg" type="text" placeholder="First name">
+                        </div>
+                        <div>
+                            <input class="inputszoveg" type="text" placeholder="Last name">
+                        </div>
+                        <div>
+                            <input class="inputszoveg" type="text" placeholder="Email">
+                        </div>
+                        <div>
+                            <input class="inputszoveg" type="text" placeholder="Phone number">
+                        </div>
+                        <div>
+                            <input id="message" type="text" placeholder="Message">
+                        </div>
+                        <button id="submit" type="button" onclick="submit()">Submit</button>
+                    </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1620.4368687540093!2d19.686734370423984!3d46.91768076951619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4743da039cc46819%3A0x76e03484e50b2f33!2zS2Vjc2tlbcOpdGkgU1pDIEthbmTDsyBLw6FsbcOhbiBUZWNobmlrdW0!5e0!3m2!1shu!2shu!4v1742664360988!5m2!1shu!2shu" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </section>
+    </div>
+            <script>
+                munka = String()
+                document.addEventListener("DOMContentLoaded", async () => {
+                    const response = await fetch("https://raw.githubusercontent.com/Macskarajaa/portfoliojson/refs/heads/master/portfolio.json");
+                    const portfolio = await response.json();
+                    const container = document.getElementById("munkacontainer");
+        
+                    portfolio.forEach(portfolio => {
+                        const card = document.createElement("div");
+                        card.classList.add("card");
+                        
+                        card.innerHTML = `<div class="container7">
+                            <div class="portfolio_image">
+                                <img src="${portfolio.photo_url}" alt="${portfolio.title}">
+                            </div>
+                            <div class="links">
+                                <h1 class="h1title">${portfolio.title}</h1>
+                            <hr>
+                            <div class="topics">
+                                <p class="topics"><ul class="temakorok">Témakörök:</ul>
+                                    ${portfolio.topics.map(topic => `<li class="topicsli">${topic}</li>`).join("")}</p>
+                            </div>
+                            <div class="oldallink">
+                                    <a href="${portfolio["repo-link"]}" target="_blank">GitHub</a> 
+                                    <a href="${portfolio["site-link"]}" target="_blank">Weboldal</a>
+                            </div>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    });
+                });
+            </script>
+    </div>
+</body>
+</html>
